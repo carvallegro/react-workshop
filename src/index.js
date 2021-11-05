@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ThemeProvider, DEFAULT_THEME} from ' @zendeskgarden/react-theming'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <ThemeProvider  focusVisibleRef={null} theme={DEFAULT_THEME} >
+        <App />
+      </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
