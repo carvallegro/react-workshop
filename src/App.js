@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import React from 'react'
+import {Redirect, Router} from "@reach/router";
+import {ChromeLayout} from "./layout/ChromeLayout";
+import {UsersPage} from "./pages/Users";
 
-function App() {
-  return (
-    <div>
-      <header>
-        <img src={logo} alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+    <Router>
+        <ChromeLayout path='/'>
+            <UsersPage path='/users'/>
+            <Redirect from='/' to='/users'/>
+        </ChromeLayout>
+    </Router>
+);
 
 export default App;

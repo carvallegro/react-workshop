@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {ThemeProvider, DEFAULT_THEME} from '@zendeskgarden/react-theming'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {ThemeProvider, DEFAULT_THEME} from ' @zendeskgarden/react-theming'
+import {createGlobalStyle} from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+  }
+`
 
 ReactDOM.render(
   <React.StrictMode>
-      <ThemeProvider  focusVisibleRef={null} theme={DEFAULT_THEME} >
+      <ThemeProvider focusVisibleRef={null} theme={DEFAULT_THEME}>
         <App />
+        <GlobalStyle />
       </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
