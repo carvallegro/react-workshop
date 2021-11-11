@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, Trigger, Menu, Item } from '@zendeskgarden/react-dropdowns';
+import {Dropdown, Trigger, Menu, Item} from '@zendeskgarden/react-dropdowns';
 import {
     Body,
     Cell,
@@ -11,12 +11,10 @@ import {
     Table
 } from '@zendeskgarden/react-tables';
 
-import data from './MOCK_DATA.json'
-
 const OverflowMenu = () => (
     <Dropdown>
         <Trigger>
-            <OverflowButton aria-label="Row actions" />
+            <OverflowButton aria-label="Row actions"/>
         </Trigger>
         <Menu
             placement="bottom-end"
@@ -53,9 +51,7 @@ const OverflowMenu = () => (
  * @return {JSX.Element}
  * @constructor
  */
-export const UserTable = ({users = []}) => {
-
-    return (
+export const UserTable = ({users = []}) => (
         <div style={{overflowX: 'auto'}}>
             <Table style={{minWidth: 500}}>
                 <Head>
@@ -70,17 +66,18 @@ export const UserTable = ({users = []}) => {
                     </HeaderRow>
                 </Head>
                 <Body>
-                    <Row>
-                        <Cell>id</Cell>
-                        <Cell>name (username)</Cell>
-                        <Cell>email</Cell>
-                        <Cell>website</Cell>
-                        <Cell hasOverflow>
-                            <OverflowMenu/>
-                        </Cell>
-                    </Row>
+                    {users.map(({id, name, username, email, website}) => (
+                        <Row>
+                            <Cell>{id}</Cell>
+                            <Cell>{name} ({username})</Cell>
+                            <Cell>{email}</Cell>
+                            <Cell>{website}</Cell>
+                            <Cell hasOverflow>
+                                <OverflowMenu/>
+                            </Cell>
+                        </Row>
+                    ))}
                 </Body>
             </Table>
         </div>
     );
-};
