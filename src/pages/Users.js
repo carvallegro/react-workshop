@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {UserTable} from "../features/users/usertable";
-import { XXXL } from '@zendeskgarden/react-typography';
+import {XXXL} from '@zendeskgarden/react-typography';
 
 /**
  * TODO:
@@ -12,7 +12,26 @@ import { XXXL } from '@zendeskgarden/react-typography';
  * @return {JSX.Element}
  * @constructor
  */
-export const UsersPage = () => <div>
-    <XXXL tag='h1'>List of users</XXXL>
-    <UserTable users={[]} />
-</div>
+export const UsersPage = () => {
+    const [isLoading, setLoading] = useState(true)
+    const [users, setUsers] = useState([])
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(result => result.json())
+            .then(users => setUsers(users))
+            .then(() => setLoading(false))
+    }, [])
+
+    return <div>
+        <XXXL tag='h1'>List of users</XXXL>
+        {isLoading
+            ? 'Users are loading...}'
+            : <UserTable users={users}/>}
+    </div>;
+}
+/*
+ *  This works too!
+ *  {isLoading && 'Users are loading...}'}
+ *  {!isLoading && <UserTable users={users}/>}
+ */
+
