@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {UserTable} from "../features/users/usertable";
-import {LG, XXXL} from '@zendeskgarden/react-typography';
+import {LG,XXXL} from '@zendeskgarden/react-typography';
 
 /**
  * TODO:
