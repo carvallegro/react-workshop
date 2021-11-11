@@ -7,11 +7,11 @@ import {routes} from "./pages/routes";
 const App = () => (
     <Router>
         <ChromeLayout path='/'>
+            <Redirect from='/' to='/users'/>
             <UsersPage path='/users'/>
             {routes.map(({Component, path}) =>
                 <Component path={path}/>
             )}
-            <Redirect from='/' to='/users'/>
         </ChromeLayout>
     </Router>
 );
