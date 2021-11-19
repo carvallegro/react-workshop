@@ -13,10 +13,6 @@ import {
 } from '@zendeskgarden/react-chrome';
 import {PALETTE} from '@zendeskgarden/react-theming';
 import {ReactComponent as ProductIcon} from '@zendeskgarden/svg-icons/src/26/garden.svg';
-import {ReactComponent as HomeIcon} from '@zendeskgarden/svg-icons/src/26/home-fill.svg';
-import {ReactComponent as EmailIcon} from '@zendeskgarden/svg-icons/src/26/email-fill.svg';
-import {ReactComponent as SettingsIcon} from '@zendeskgarden/svg-icons/src/26/settings-fill.svg';
-import {ReactComponent as ZendeskIcon} from '@zendeskgarden/svg-icons/src/26/zendesk.svg';
 
 import {routes} from "../pages/routes";
 import {Match, useNavigate} from "@reach/router";

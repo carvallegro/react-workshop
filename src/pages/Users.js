@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {UserTable} from "../features/users/usertable";
-import {XXXL} from '@zendeskgarden/react-typography';
+import {LG, XXXL} from '@zendeskgarden/react-typography';
 
 /**
  * TODO:
@@ -25,7 +25,7 @@ export const UsersPage = () => {
     return <div>
         <XXXL tag='h1'>List of users</XXXL>
         {isLoading
-            ? 'Users are loading...}'
+            ? <LG tag='h2' role="heading" aria-level="2">Users are loading...</LG>
             : <UserTable users={users}/>}
     </div>;
 }
