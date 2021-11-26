@@ -1,47 +1,49 @@
-import React from 'react';
-import { Dropdown, Trigger, Menu, Item } from '@zendeskgarden/react-dropdowns';
+import React from "react";
+import { Dropdown, Trigger, Menu, Item } from "@zendeskgarden/react-dropdowns";
 import {
-    Body,
-    Cell,
-    Head,
-    HeaderCell,
-    HeaderRow,
-    OverflowButton,
-    Row,
-    Table
-} from '@zendeskgarden/react-tables';
+  Body,
+  Cell,
+  Head,
+  HeaderCell,
+  HeaderRow,
+  OverflowButton,
+  Row,
+  Table,
+} from "@zendeskgarden/react-tables";
 
-import data from './MOCK_DATA.json'
+import data from "./MOCK_DATA.json";
 
 const OverflowMenu = () => (
-    <Dropdown>
-        <Trigger>
-            <OverflowButton aria-label="Row actions" />
-        </Trigger>
-        <Menu
-            placement="bottom-end"
-            popperModifiers={{
-                preventOverflow: {
-                    boundariesElement: 'viewport'
-                },
-                flip: {
-                    enabled: false
-                },
-                offset: {
-                    fn: data => {
-                        /**
-                         * Ensure correct placement relative to trigger
-                         **/
-                        data.offsets.popper.top -= 2;
+  <Dropdown>
+    <Trigger>
+      <OverflowButton aria-label="Row actions" />
+    </Trigger>
+    <Menu
+      placement="bottom-end"
+      popperModifiers={{
+        preventOverflow: {
+          boundariesElement: "viewport",
+        },
+        flip: {
+          enabled: false,
+        },
+        offset: {
+          fn: (data) => {
+            /**
+             * Ensure correct placement relative to trigger
+             **/
+            data.offsets.popper.top -= 2;
 
-                        return data;
-                    }
-                }
-            }}
-        >
-            <Item value="item-1" disabled>Profile</Item>
-        </Menu>
-    </Dropdown>
+            return data;
+          },
+        },
+      }}
+    >
+      <Item value="item-1" disabled>
+        Profile
+      </Item>
+    </Menu>
+  </Dropdown>
 );
 
 /**
@@ -53,34 +55,33 @@ const OverflowMenu = () => (
  * @return {JSX.Element}
  * @constructor
  */
-export const UserTable = ({users = []}) => {
-
-    return (
-        <div style={{overflowX: 'auto'}}>
-            <Table style={{minWidth: 500}}>
-                <Head>
-                    <HeaderRow>
-                        <HeaderCell>Id</HeaderCell>
-                        <HeaderCell>Name (username)</HeaderCell>
-                        <HeaderCell>email</HeaderCell>
-                        <HeaderCell>website</HeaderCell>
-                        <HeaderCell hasOverflow>
-                            <OverflowMenu/>
-                        </HeaderCell>
-                    </HeaderRow>
-                </Head>
-                <Body>
-                    <Row>
-                        <Cell>id</Cell>
-                        <Cell>name (username)</Cell>
-                        <Cell>email</Cell>
-                        <Cell>website</Cell>
-                        <Cell hasOverflow>
-                            <OverflowMenu/>
-                        </Cell>
-                    </Row>
-                </Body>
-            </Table>
-        </div>
-    );
+export const UserTable = ({ users = [] }) => {
+  return (
+    <div style={{ overflowX: "auto" }}>
+      <Table style={{ minWidth: 500 }}>
+        <Head>
+          <HeaderRow>
+            <HeaderCell>Id</HeaderCell>
+            <HeaderCell>Name (username)</HeaderCell>
+            <HeaderCell>email</HeaderCell>
+            <HeaderCell>website</HeaderCell>
+            <HeaderCell hasOverflow>
+              <OverflowMenu />
+            </HeaderCell>
+          </HeaderRow>
+        </Head>
+        <Body>
+          <Row>
+            <Cell>id</Cell>
+            <Cell>name (username)</Cell>
+            <Cell>email</Cell>
+            <Cell>website</Cell>
+            <Cell hasOverflow>
+              <OverflowMenu />
+            </Cell>
+          </Row>
+        </Body>
+      </Table>
+    </div>
+  );
 };

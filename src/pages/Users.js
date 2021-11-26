@@ -1,6 +1,6 @@
-import React from 'react';
-import {UserTable} from "../features/users/usertable";
-import { XXXL } from '@zendeskgarden/react-typography';
+import React from "react";
+import { UserTable } from "../features/users/usertable";
+import { XXXL } from "@zendeskgarden/react-typography";
 
 /**
  * TODO:
@@ -12,7 +12,9 @@ import { XXXL } from '@zendeskgarden/react-typography';
  * @return {JSX.Element}
  * @constructor
  */
-export const UsersPage = () => <div>
-    <XXXL tag='h1'>List of users</XXXL>
+export const UsersPage = () => (
+  <div>
+    <XXXL tag="h1">List of users</XXXL>
     <UserTable users={[]} />
-</div>
+  </div>
+);
