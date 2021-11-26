@@ -8,7 +8,7 @@ import { routes } from "./pages/routes";
 const App = () => (
   <Router>
     <ChromeLayout path="/">
-      <Redirect from="/" to="/users" />
+      <Redirect noThrow from="/" to="/users" />
       <UsersPage path="/users" />
       <UserPage path="/user" />
       {routes.map(({ Component, path }) => (
