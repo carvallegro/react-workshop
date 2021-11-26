@@ -2371,6 +2371,14 @@
     "@babel/runtime" "^7.8.4"
     "@reach/auto-id" "^0.16.0"
 
+"@zendeskgarden/react-avatars@^8.46.0":
+  version "8.46.0"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-avatars/-/react-avatars-8.46.0.tgz#9dd671e37c5f00a0c476456d4cf3512821a33016"
+  integrity sha512-mnbcdyPjoeOSFuMhNOc9AOUWeJzblSDQ9FNVkxEN2FS+ftYf/WTycW7qbXFpZjrVUA6v//+g9sjeZUXK5uOdJQ==
+  dependencies:
+    polished "^4.0.0"
+    prop-types "^15.5.7"
+
 "@zendeskgarden/react-chrome@^8.44.1":
   version "8.44.1"
   resolved "https://registry.yarnpkg.com/@zendeskgarden/react-chrome/-/react-chrome-8.44.1.tgz#3ab1cc305632c232cdf2f0f535c35fc94578cefd"
@@ -2407,6 +2415,14 @@
     polished "^4.0.0"
     prop-types "^15.5.7"
     react-merge-refs "^1.1.0"
+
+"@zendeskgarden/react-grid@^8.46.0":
+  version "8.46.0"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-grid/-/react-grid-8.46.0.tgz#c49e4637c2b7bc43c72b496830890d8fac882424"
+  integrity sha512-JiQ6Ci/uopQBJqO+MVajFrj7aCH5q9+xe3jepR2L6p+NTdiAbPj1J6r/+uq5+5BO5IVxwQP++vJ7QUiPOfu9OA==
+  dependencies:
+    polished "^4.0.0"
+    prop-types "^15.5.7"
 
 "@zendeskgarden/react-tables@^8.44.1":
   version "8.44.1"
