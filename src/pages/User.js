@@ -7,17 +7,11 @@ import { Row, Col } from "@zendeskgarden/react-grid";
 import { Timeline } from "@zendeskgarden/react-accordions";
 import { Span } from "@zendeskgarden/react-typography";
 
-import { Well } from "@zendeskgarden/react-notifications";
+// 1. Create a custom hook
+// 2. Link to the User page from the Users page
 
 export const UserPage = () => (
   <>
-    {/* <Row>
-      <Col textAlign="center"></Col>
-      <Avatar backgroundColor={PALETTE.grey[600]}>
-        <UserIcon role="img" aria-label="icon avatar" />
-      </Avatar>
-    </Row> */}
-
     <Row justifyContent="center">
       <Col sm="auto">
         <Timeline>
