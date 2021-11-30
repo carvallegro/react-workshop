@@ -7,7 +7,7 @@ import { Row, Col } from "@zendeskgarden/react-grid";
 import { Timeline } from "@zendeskgarden/react-accordions";
 import { Span } from "@zendeskgarden/react-typography";
 
-// 1. Create a custom hook
+// 1. Create a custom hook ✅
 // 2. Link to the User page from the Users page
 
 export const UserPage = () => (
