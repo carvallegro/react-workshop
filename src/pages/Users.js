@@ -16,7 +16,13 @@ import { useFetchUsers } from "../features/users/hooks";
 export const UsersPage = () => {
   const { isLoading, users } = useFetchUsers();
 
-  return (
+    if(!isLoading && users === []) {
+        return <div>
+            No user found
+        </div>
+    }
+
+    return (
     <div>
       <XXXL tag="h1">List of users</XXXL>
       {isLoading ? (

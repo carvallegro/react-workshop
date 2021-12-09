@@ -10,9 +10,14 @@ import {
   Row,
   Table,
 } from "@zendeskgarden/react-tables";
+import {navigate} from "@reach/router";
 
-const OverflowMenu = () => (
-  <Dropdown>
+const OverflowMenu = ({userId}) => (
+  <Dropdown onSelect={item => {
+      if (item==='profile'){
+          navigate('/users/'+userId)
+      }
+  }}>
     <Trigger>
       <OverflowButton aria-label="Row actions" />
     </Trigger>
@@ -37,7 +42,7 @@ const OverflowMenu = () => (
         },
       }}
     >
-      <Item value="item-1" disabled>
+      <Item value="profile">
         Profile
       </Item>
     </Menu>
@@ -77,7 +82,7 @@ export const UserTable = ({ users = [] }) => (
             <Cell>{email}</Cell>
             <Cell>{website}</Cell>
             <Cell hasOverflow>
-              <OverflowMenu />
+              <OverflowMenu userId={id}/>
             </Cell>
           </Row>
         ))}

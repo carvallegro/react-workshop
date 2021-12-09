@@ -6,15 +6,17 @@ import { UserPage } from "./User";
 
 export const routes = [
   {
+    name: "User",
+    path: "/users/:userId",
+    Icon: PersonIcon,
+    Component: UserPage,
+    showsInChrome: false
+  },
+  {
     name: "Users",
     path: "/users",
     Icon: PersonIcon,
     Component: UsersPage,
-  },
-  {
-    name: "User",
-    path: "/user",
-    Icon: PersonIcon,
-    Component: UserPage,
+    showsInChrome: true
   },
 ];
