@@ -14,7 +14,7 @@ describe("<UsersPage />", () => {
       window.fetch.mockResolvedValue({
         ok: true,
         json: async () =>
-          new Promise((resolve) => setTimeout(() => resolve(TEST_DATA), 500)),
+          new Promise((resolve) => setTimeout(() => resolve(TEST_DATA), 100)),
       });
     });
 
