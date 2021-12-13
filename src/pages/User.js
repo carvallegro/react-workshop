@@ -14,12 +14,16 @@ import {useFetchUsers} from "../features/users/hooks";
 // 2. Link to the User page from the Users page
 
 export const UserPage = ({userId}) => {
-  const {users, isLoading} = useFetchUsers({id: userId})
+  const {users, isLoading, error} = useFetchUsers({id: userId})
 
-  if(!userId || (!isLoading && !users)) {
+  if(!userId || (!isLoading && !users) || (!isLoading && !users[0])) {
     return <div>
       No users found
     </div>
+  }
+
+  if(!isLoading && error){
+    return <div>Error: {error.toString()}</div>
   }
 
   if (isLoading) {
