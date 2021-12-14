@@ -16,14 +16,14 @@ import { useFetchUsers } from "../features/users/hooks";
 export const UsersPage = () => {
   const { isLoading, users, error } = useFetchUsers();
 
+    if(!isLoading && error){
+        return <div>Error: {error.toString()}</div>
+    }
+
     if(!isLoading && (!users || users.length === 0)) {
         return <div>
             No user found
         </div>
-    }
-
-    if(!isLoading && error){
-        return <div>Error: {error.toString()}</div>
     }
 
     return (

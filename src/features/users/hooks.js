@@ -17,7 +17,7 @@ export const useFetchUsers = (filters = {}) => {
 
   useEffect(() => {
     setLoading(true)
-    setError(undefined)
+
     fetch(url)
       .then((result) => result.json())
       .then((users) => setUsers(Array.isArray(users) ? users : []))
