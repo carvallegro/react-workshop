@@ -39,4 +39,21 @@ describe('useFetchUsers', () => {
             expect(window.fetch).toHaveBeenCalledWith( `https://jsonplaceholder.typicode.com/users?id=123`)
         })
     })
+
+    describe('when it throws an error', () => {
+        beforeEach(() => {
+            window.fetch.mockRejectedValue(Error('Random error'));
+        })
+
+        it('should return the error', async () => {
+            const {result, waitForNextUpdate} = renderHook(() => useFetchUsers())
+
+            expect(result.current.isLoading).toBeTruthy()
+            await waitForNextUpdate()
+
+            expect(result.current.isLoading).toBeFalsy()
+            expect(result.current.users).toHaveLength(0)
+            expect(result.current.error).toEqual(Error('Random error'))
+        })
+    })
 })
