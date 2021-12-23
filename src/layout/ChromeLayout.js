@@ -32,7 +32,9 @@ export const ChromeLayout = ({ children }) => {
           </NavItemIcon>
           <NavItemText>Zendesk Garden</NavItemText>
         </NavItem>
-        {routes.map(({ name, path, Icon }) => (
+        {routes
+            .filter(({showsInChrome}) => showsInChrome === true)
+            .map(({ name, path, Icon }) => (
           <Match path={path}>
             {({ match }) => (
               <NavItem isCurrent={match} onClick={() => navigate(path)}>
