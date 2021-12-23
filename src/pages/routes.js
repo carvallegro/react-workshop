@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as PersonIcon } from "@zendeskgarden/svg-icons/src/26/person.svg";
 
 import { UsersPage } from "./Users";

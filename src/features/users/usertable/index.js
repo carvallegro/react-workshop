@@ -11,7 +11,7 @@ import {
   Table,
 } from "@zendeskgarden/react-tables";
 
-import data from "./MOCK_DATA.json";
+// import data from "./MOCK_DATA.json";
 
 const OverflowMenu = () => (
   <Dropdown>
